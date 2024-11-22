@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Here's an analysis of the provided example:\n\n```yaml\nexample_1:\n  input:\n    width: 7\n    height: 7\n    colors:\n      - 0: 43\n      - 8: 5\n    objects:\n      - size: 5, position: center-left, color: azure\n  output:\n    width: 7\n    height: 7\n    colors:\n      - 0: 42\n      - 8: 5\n      - 1: 2\n    objects:\n      - size: 5, position: center-left, color: azure\n      - size: 2, position: (1,2), (5,4), color: blue\n\n  differences:\n    cells_changed: 2\n    colors_changed: Two 'azure' pixels changed to 'blue'.\n  transformation:\n    - It seems some 'azure' pixels are replaced with 'blue' pixels. The positions of the changed pixels are not immediately obvious.  Further examples are needed to determine the rule.\n\n```\n\nThe transformation appears to selectively change some azure (8) pixels to blue (1) pixels.  The rule governing *which* azure pixels are changed is unclear from this single example. More examples are needed to understand the pattern and formulate a robust transformation rule.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.1702665825412698,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 1981,
+    "candidates_token_count": 292,
+    "total_token_count": 2273,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 1981,
+    "candidates": 292,
+    "total": 2273,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.525446,
+    "total_elapsed": 2.591277,
+    "response_times": [
+      2.525446
+    ]
+  }
+}

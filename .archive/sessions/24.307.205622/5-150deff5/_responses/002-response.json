@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\ninput:\n  width: 10\n  height: 8\n  colors:\n    - 0: 48\n    - 5: 20\nobjects:\n  - a gray (5) object shaped like a \"V\" with a bar connecting the arms.\n\noutput:\n  width: 10\n  height: 8\n  colors:\n    - 0: 48\n    - 2: 8\n    - 8: 12\nobjects:\n  - an azure (8) object shaped like a \"V\".\n  - a red (2) object in the shape of an \"I\", filling the negative space from the input object.\n\ndifferences:\n  cells_changed: 20\n  colors_changed: gray (5) pixels became either red (2) or azure (8).\ntransformation:\n  - Similar to the first example, the gray (5) object has been split and re-colored.  The outer portions of the object have become azure (8) and the inner portion became red (2).\n```\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.2037529468536377,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 3319,
+    "candidates_token_count": 240,
+    "total_token_count": 3559,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 5508,
+    "candidates": 479,
+    "total": 5987,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 5.834675,
+    "total_elapsed": 11.965813,
+    "response_times": [
+      5.930066,
+      5.834675
+    ]
+  }
+}

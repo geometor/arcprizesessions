@@ -1,0 +1,40 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\ninput:\n  width: 5\n  height: 5\n  colors:\n    - 0: 18\n    - 1: 2\n    - 2: 1\n    - 3: 3\n    - 6: 1\n  objects:\n    - size: 1x1, position: (3,0), color: magenta\n    - size: 1x1, position: (3,4), color: blue\n    - size: 1x1, position: (4,4), color: red\n    - size: 1x1, position: (1,1), color: green\n    - size: 1x1, position: (2,1), color: green\n    - size: 1x1, position: (4,1), color: green\n\noutput:\n  width: 5\n  height: 5\n  colors:\n    - 0: 22\n    - 1: 2\n    - 2: 1\n    - 3: 3\n    - 6: 1\n  objects:\n    - size: 1x1, position: (4,0), color: magenta\n    - size: 1x1, position: (4,3), color: blue\n    - size: 1x1, position: (4,4), color: red\n    - size: 1x1, position: (2,1), color: green\n    - size: 1x1, position: (3,1), color: green\n    - size: 1x1, position: (4,1), color: green\n\ndifferences:\n  cells_changed: 7\n  colors_changed: Non-zero colored pixels are moved down to the bottom row, as far to the right as possible, maintaining relative positions.  The remaining cells are set to white (0).\n\ntransformation:\n  - The non-zero colored pixels are moved to the bottom row of the output grid, prioritizing the rightmost positions and maintaining their relative positions.  The rest of the output is filled with white.\n```\n\nBased on the three examples, the transformation consistently involves moving all non-zero colored pixels to the bottom row of the output grid while maintaining their relative positions. The key difference is the order in which the elements fill the row; the rightmost position is filled first, proceeding leftwards before moving to the row above it.  The remainder of the cells are filled with white.  The algorithm seems to read the non-zero elements from right to left, filling the bottom row from right to left, then moving up one row and proceeding similarly.\n\n\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.26570084747472034,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 4470,
+    "candidates_token_count": 581,
+    "total_token_count": 5051,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 9340,
+    "candidates": 1848,
+    "total": 11188,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 3.502846,
+    "total_elapsed": 10.845199,
+    "response_times": [
+      3.107031,
+      4.019343,
+      3.502846
+    ]
+  }
+}

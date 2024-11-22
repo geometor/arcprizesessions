@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_2:\n  input:\n    width: 3\n    height: 3\n    colors:\n      - 2: 3\n      - 3: 3\n      - 8: 3\n    objects:\n      - color: red, size: 3x1, position: top-left\n      - color: green, size: 3x1, position: center-left\n      - color: azure, size: 3x1, position: top-right\n  output:\n    width: 3\n    height: 3\n    colors:\n      - 6: 3\n      - 4: 3\n      - 9: 3\n    objects:\n      - color: magenta, size: 3x1, position: top-left\n      - color: yellow, size: 3x1, position: center-left\n      - color: maroon, size: 3x1, position: top-right\n  differences:\n    cells_changed: 9\n    colors_changed: All colors are replaced with different colors.  The mapping is not a simple addition, but appears to be a more complex transformation.  2->6, 3->4, 8->9.\n  transformation:\n    - The transformation is not a simple addition like in example_1.  It seems to involve a more complex mapping of input colors to output colors.  The mapping is not immediately obvious.\n```\n\nThe second example shows a different transformation than the first. While the first example uses a simple addition of 3 to each color value, the second example shows a more complex mapping.  There's no immediately apparent mathematical formula or pattern relating input to output colors.  It will require further examples to discern the underlying rule.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.16094209724955816,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 2733,
+    "candidates_token_count": 389,
+    "total_token_count": 3122,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 4540,
+    "candidates": 728,
+    "total": 5268,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.600224,
+    "total_elapsed": 5.183059,
+    "response_times": [
+      2.459545,
+      2.600224
+    ]
+  }
+}

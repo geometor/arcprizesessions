@@ -1,0 +1,169 @@
+.. sidebar:: details
+
+   :puzzle_id: 3-1e0a9b12
+   :timestamp: 24.307.205622
+   :call_count: 2
+
+002 • History
+=============
+
+
+Begin puzzle: 3-1e0a9b12
+
+
+
+**example_1**
+
+
+
+**input**
+
+
+
+.. code-block::
+
+    [[0 4 0 9]
+     [0 0 0 0]
+     [0 4 6 0]
+     [1 0 0 0]]
+
+
+.. image:: _images/000-example_1_input.png
+   :alt: _images/000-example_1_input.png
+
+
+
+**output**
+
+
+
+.. code-block::
+
+    [[0 0 0 0]
+     [0 0 0 0]
+     [0 4 0 0]
+     [1 4 6 9]]
+
+
+.. image:: _images/000-example_1_output.png
+   :alt: _images/000-example_1_output.png
+
+
+
+**observations**
+
+
+
+.. code-block:: yaml
+
+   input:
+     width: 4
+     height: 4
+     colors:
+       - 0: 11
+       - 1: 1
+       - 4: 2
+       - 6: 1
+       - 9: 1
+   objects:
+     - two yellows (4) at (1,2) and (0,2)
+     - magenta (6) at (2,2)
+     - blue (1) at (0,0)
+     - maroon (9) at (3,2)
+
+   output:
+     width: 4
+     height: 4
+     colors:
+       - 0: 12
+       - 1: 1
+       - 4: 2
+       - 6: 1
+       - 9: 1
+   objects:
+     - two yellows (4) at (1,0) and (1,3)
+     - magenta (6) at (2,3)
+     - blue (1) at (0,3)
+     - maroon (9) at (3,3)
+   differences:
+     cells_changed: 8
+     colors_changed: none - same palette of colors in both
+   transformation:
+     - non-zero pixels shifted down and left to form horizontal line on bottom
+     - color values appear to maintain relative order
+
+
+
+**example_2**
+
+
+
+**input**
+
+
+
+.. code-block::
+
+    [[0 0 0 0 0 9]
+     [0 0 0 8 0 0]
+     [0 0 0 0 0 0]
+     [4 0 0 0 0 0]
+     [4 0 7 8 0 0]
+     [4 0 7 0 0 0]]
+
+
+.. image:: _images/001-example_2_input.png
+   :alt: _images/001-example_2_input.png
+
+
+
+**output**
+
+
+
+.. code-block::
+
+    [[0 0 0 0 0 0]
+     [0 0 0 0 0 0]
+     [0 0 0 0 0 0]
+     [4 0 0 0 0 0]
+     [4 0 7 8 0 0]
+     [4 0 7 8 0 9]]
+
+
+.. image:: _images/001-example_2_output.png
+   :alt: _images/001-example_2_output.png
+
+
+
+**observations**
+
+
+
+================================================================================
+
+
+
+INSTRUCTIONS:
+
+
+
+
+* review the example grids
+
+
+
+
+* check for differences and patterns
+
+
+
+.. seealso::
+
+   - :doc:`002-prompt`
+   - :doc:`002-response`
+
+
+
+====
+

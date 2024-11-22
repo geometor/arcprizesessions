@@ -1,0 +1,40 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_3:\n  input:\n    width: 5\n    height: 5\n    colors:\n      - 0: 17\n      - 1: 2\n      - 2: 1\n      - 3: 3\n      - 6: 1\n    objects:\n      - size: 1x1, position: (3,0), color: magenta\n      - size: 1x1, position: (1,1), color: green\n      - size: 1x1, position: (2,1), color: green\n      - size: 1x1, position: (4,1), color: green\n      - size: 1x1, position: (3,0), color: magenta\n      - size: 1x1, position: (0,3), color: blue\n      - size: 1x1, position: (2,3), color: blue\n      - size: 1x1, position: (2,4), color: red\n\n  output:\n    width: 5\n    height: 5\n    colors:\n      - 0: 22\n      - 1: 2\n      - 2: 1\n      - 3: 3\n      - 6: 1\n    objects:\n      - size: 1x1, position: (4,4), color: magenta\n      - size: 1x1, position: (1,2), color: green\n      - size: 1x1, position: (2,2), color: green\n      - size: 1x1, position: (4,2), color: green\n      - size: 1x1, position: (4,0), color: magenta\n      - size: 1x1, position: (3,3), color: blue\n      - size: 1x1, position: (4,3), color: blue\n      - size: 1x1, position: (4,4), color: red\n\n  differences:\n    cells_changed: 13\n    colors_changed: The non-zero values are moved to the bottom two rows, maintaining their relative positions within each row.  The remaining cells are filled with zeros.\n\n  transformation:\n    - Non-zero values are moved to the bottom two rows of the output grid, maintaining their relative positions within each row.\n    - The remaining cells in the output grid are filled with zeros.\n```\n\nAll three examples demonstrate a pattern of moving non-zero values to the bottom rows of the output grid while maintaining their relative horizontal positions. The number of bottom rows used varies depending on the input grid's non-zero value distribution.  The remaining cells are filled with zeros.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.05942039240419475,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 4376,
+    "candidates_token_count": 612,
+    "total_token_count": 4988,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 9241,
+    "candidates": 1783,
+    "total": 11024,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 3.300394,
+    "total_elapsed": 10.026305,
+    "response_times": [
+      2.788427,
+      3.720161,
+      3.300394
+    ]
+  }
+}

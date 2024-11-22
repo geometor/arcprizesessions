@@ -1,0 +1,42 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "Okay, I understand. I've analyzed the four examples and determined that the transformation is a deterministic color mapping represented by the `input_output_mapping` dictionary.  I'm ready for the test input.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.06182594829135471,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 5566,
+    "candidates_token_count": 45,
+    "total_token_count": 5611,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 18926,
+    "candidates": 1790,
+    "total": 20716,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 1.08138,
+    "total_elapsed": 15.011072,
+    "response_times": [
+      2.876446,
+      2.593812,
+      4.948697,
+      3.203263,
+      1.08138
+    ]
+  }
+}

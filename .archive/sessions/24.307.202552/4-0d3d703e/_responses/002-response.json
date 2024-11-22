@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_2:\n  input:\n    width: 3\n    height: 3\n    colors:\n      - 2: 3\n      - 3: 3\n      - 8: 3\n    objects:\n      - color: red, size: 3x1, position: top-left\n      - color: green, size: 3x1, position: top-middle\n      - color: azure, size: 3x1, position: top-right\n\n  output:\n    width: 3\n    height: 3\n    colors:\n      - 6: 3\n      - 4: 3\n      - 9: 3\n    objects:\n      - color: magenta, size: 3x1, position: top-left\n      - color: yellow, size: 3x1, position: top-middle\n      - color: maroon, size: 3x1, position: top-right\n\n  differences:\n    cells_changed: 9\n    colors_changed: All cells changed to different colors.  The mapping isn't a simple addition as in example 1.\n\n  transformation:\n    - The transformation is a more complex remapping of colors.  The mapping is not immediately obvious from a simple arithmetic operation.  A lookup table or a more complex function might be needed.\n```\n\nThe transformation in example 2 is also a color remapping, but it's not a simple addition like in example 1. The mapping is: 2->6, 3->4, 8->9. This suggests that a lookup table or a more complex function is necessary to describe the transformation.  It's not clear from just these two examples whether there's a consistent rule for this remapping beyond a case-by-case lookup.  More examples are needed to determine if there's a broader pattern.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.16831935285085656,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 2747,
+    "candidates_token_count": 415,
+    "total_token_count": 3162,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 4554,
+    "candidates": 768,
+    "total": 5322,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.606116,
+    "total_elapsed": 5.213674,
+    "response_times": [
+      2.503617,
+      2.606116
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_2:\n  input:\n    width: 3\n    height: 3\n    colors:\n      - 2: 3\n      - 3: 3\n      - 8: 3\n    objects:\n      - size: 3x1, position: 0,0, color: red\n      - size: 3x1, position: 1,0, color: green\n      - size: 3x1, position: 2,0, color: azure\n  output:\n    width: 3\n    height: 3\n    colors:\n      - 6: 3\n      - 4: 3\n      - 9: 3\n    objects:\n      - size: 3x1, position: 0,0, color: magenta\n      - size: 3x1, position: 1,0, color: yellow\n      - size: 3x1, position: 2,0, color: maroon\n  differences:\n    cells_changed: 9\n    colors_changed: All colors are changed. The transformation isn't a simple arithmetic shift like in example_1.  Instead, it appears to be a specific mapping: 2->6, 3->4, 8->9.\n  transformation:\n    - A specific mapping of input colors to output colors.  Not a simple arithmetic operation.\n```\n\nThe transformation in example 2 is different from example 1.  It's not a simple addition or subtraction. Instead, there's a unique mapping for each color:\n\n* Red (2) becomes Magenta (6)\n* Green (3) becomes Yellow (4)\n* Azure (8) becomes Maroon (9)\n\nThere is no immediately obvious mathematical or geometric relationship between the input and output colors.  The spatial arrangement remains unchanged.  Further examples are needed to determine if this is a consistent rule or just a coincidence in this example.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.08688701282848012,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 2754,
+    "candidates_token_count": 429,
+    "total_token_count": 3183,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 4559,
+    "candidates": 791,
+    "total": 5350,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.561981,
+    "total_elapsed": 5.185449,
+    "response_times": [
+      2.49346,
+      2.561981
+    ]
+  }
+}

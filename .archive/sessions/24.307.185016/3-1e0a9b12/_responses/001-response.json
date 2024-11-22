@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_1:\n  input:\n    width: 4\n    height: 4\n    colors:\n      - 0: 10\n      - 1: 1\n      - 4: 2\n      - 6: 1\n      - 9: 1\n    objects:\n      - yellow: size 2x1, position (1,1), (2,1)\n      - blue: size 1x1, position (3,0)\n      - magenta: size 1x1, position (2,2)\n      - maroon: size 1x1, position (0,3)\n  output:\n    width: 4\n    height: 4\n    colors:\n      - 0: 12\n      - 1: 1\n      - 4: 2\n      - 6: 1\n      - 9: 1\n    objects:\n      - blue: size 1x1, position (3,0)\n      - yellow: size 1x1, position (2,1)\n      - magenta: size 1x1, position (3,2)\n      - maroon: size 1x1, position (3,3)\n  differences:\n    cells_changed: 9\n    colors_changed: Some non-zero values move to the bottom-right corner of the grid while keeping their relative positions.  The rest of the grid becomes white.\n  transformation:\n    - Non-zero values are collected in the bottom-right corner, maintaining their relative positions to each other.\n```\n\nThe transformation appears to involve moving all non-zero elements to the bottom-right corner while preserving their relative positions.  The remaining cells become white (0).\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.10724291679186698,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 1839,
+    "candidates_token_count": 390,
+    "total_token_count": 2229,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 1839,
+    "candidates": 390,
+    "total": 2229,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 3.002656,
+    "total_elapsed": 3.065904,
+    "response_times": [
+      3.002656
+    ]
+  }
+}

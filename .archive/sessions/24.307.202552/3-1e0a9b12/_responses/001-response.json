@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_1:\n  input:\n    width: 4\n    height: 4\n    colors:\n      - 0: 10\n      - 1: 1\n      - 4: 2\n      - 6: 1\n      - 9: 1\n    objects:\n      - size: 1x1, position: (0,1), color: yellow\n      - size: 1x1, position: (2,1), color: yellow\n      - size: 1x1, position: (3,0), color: maroon\n      - size: 1x1, position: (2,2), color: magenta\n      - size: 1x1, position: (3,0), color: blue\n  output:\n    width: 4\n    height: 4\n    colors:\n      - 0: 12\n      - 1: 1\n      - 4: 2\n      - 6: 1\n      - 9: 1\n    objects:\n      - size: 1x1, position: (2,1), color: yellow\n      - size: 1x1, position: (3,3), color: maroon\n      - size: 1x1, position: (3,0), color: blue\n      - size: 1x1, position: (3,2), color: magenta\n      - size: 1x1, position: (3,1), color: yellow\n\n  differences:\n    cells_changed: 8\n    colors_changed:  Non-zero values are moved to the bottom row.  The rest are set to 0.\n  transformation:\n    - The non-zero values from the input grid are moved to the bottom row of the output grid, maintaining their relative positions.\n    - The remaining cells in the output grid are filled with zeros.\n```\n\nMy reasoning is based on observing the movement of the colored blocks from the input to the output grid.  The transformation appears to be a consolidation of non-zero values into the last row, maintaining their order.  The top three rows are entirely filled with zeros.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.09281497796376546,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 1839,
+    "candidates_token_count": 480,
+    "total_token_count": 2319,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 1839,
+    "candidates": 480,
+    "total": 2319,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.788427,
+    "total_elapsed": 2.841925,
+    "response_times": [
+      2.788427
+    ]
+  }
+}

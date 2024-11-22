@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_2:\n  input:\n    width: 7\n    height: 7\n    colors:\n      - 0: 43\n      - 8: 7\n    objects:\n      - size: 7, position: scattered, color: azure\n  output:\n    width: 7\n    height: 7\n    colors:\n      - 0: 40\n      - 8: 7\n      - 1: 3\n    objects:\n      - size: 7, position: scattered, color: azure\n      - size: 3, position: scattered, color: blue\n  differences:\n    cells_changed: 3\n    colors_changed: Three 'azure' pixels changed to 'blue'.\n  transformation:\n    - Similar to example_1, isolated 'azure' pixels are changed to 'blue'.  The change appears independent of location.\n```\n\nThe second example reinforces the hypothesis from example_1.  The transformation consistently changes isolated azure pixels (those with only one or zero adjacent azure neighbors) to blue.  There's no apparent pattern to *which* isolated pixels change other than they must be isolated.  The location and overall arrangement of the azure group doesn't seem to influence the transformation.  The number of pixels changed varies but maintains the rule.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.2441982256178184,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 3060,
+    "candidates_token_count": 291,
+    "total_token_count": 3351,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 5041,
+    "candidates": 607,
+    "total": 5648,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.162089,
+    "total_elapsed": 5.214397,
+    "response_times": [
+      2.903359,
+      2.162089
+    ]
+  }
+}

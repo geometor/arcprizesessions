@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_2:\n  input:\n    width: 7\n    height: 7\n    colors:\n      - 0: 42\n      - 8: 8\n    objects:\n      - size: 8, position: scattered, color: azure\n\n  output:\n    width: 7\n    height: 7\n    colors:\n      - 0: 39\n      - 8: 8\n      - 1: 3\n    objects:\n      - size: 8, position: scattered, color: azure\n      - size: 3, position: scattered, color: blue\n\n  differences:\n    cells_changed: 3\n    colors_changed: Three azure pixels changed to blue.\n  transformation:\n    - Add three blue pixels at specific locations relative to the azure objects.  The added blue pixels appear adjacent to the azure pixels.  The pattern is not immediately clear from this example alone.\n```\n\nThe transformation in this example is similar to the first example, but now three blue pixels are added. The positions seem to be adjacent to the existing azure pixels, however without more examples it is impossible to determine whether the placement of these pixels is truly relative to the azure object's position or is determined by some other rule.  It is also not clear if the number of added blue pixels is related to the number of azure pixels.  More examples are needed to solidify these observations.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.36353140610914964,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 3070,
+    "candidates_token_count": 312,
+    "total_token_count": 3382,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 5051,
+    "candidates": 638,
+    "total": 5689,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.18915,
+    "total_elapsed": 5.025517,
+    "response_times": [
+      2.680936,
+      2.18915
+    ]
+  }
+}

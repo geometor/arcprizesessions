@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_1:\n  input:\n    width: 7\n    height: 7\n    colors:\n      - 0: 43\n      - 8: 5\n    objects:\n      - size: 5, position: (1,1), color: azure\n  output:\n    width: 7\n    height: 7\n    colors:\n      - 0: 42\n      - 8: 5\n      - 1: 2\n    objects:\n      - size: 5, position: (1,1), color: azure\n  differences:\n    cells_changed: 2\n    colors_changed: Two azure pixels changed to blue.\n  transformation:\n    - The transformation appears to change some azure (8) pixels to blue (1) pixels.  Specifically, it seems to change the pixels in the top-right and bottom-left corners of the main cluster of azure pixels.  More examples are needed to confirm the rule.\n```\n\nMy initial hypothesis is that the transformation involves changing certain azure pixels to blue pixels.  The specific locations of these changes are not immediately apparent, and more examples would be needed to define a reliable rule.  The changed pixels seem to be on the perimeter of the main group of azure pixels.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.2523792348009475,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 1981,
+    "candidates_token_count": 282,
+    "total_token_count": 2263,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 1981,
+    "candidates": 282,
+    "total": 2263,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.495754,
+    "total_elapsed": 2.553455,
+    "response_times": [
+      2.495754
+    ]
+  }
+}

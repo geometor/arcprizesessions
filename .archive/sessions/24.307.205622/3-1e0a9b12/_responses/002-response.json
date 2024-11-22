@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\ninput:\n  width: 6\n  height: 6\n  colors:\n    - 0: 29\n    - 4: 3\n    - 7: 2\n    - 8: 2\n    - 9: 1\nobjects:\n  - three yellows (4) at (0,3), (0,4) and (0,5)\n  - two oranges (7) at (2,4) and (2,5)\n  - two azures (8) at (3,1) and (3,4)\n  - maroon (9) at (5,0)\n\noutput:\n  width: 6\n  height: 6\n  colors:\n    - 0: 28\n    - 4: 3\n    - 7: 2\n    - 8: 2\n    - 9: 1\nobjects:\n  - three yellows (4) at (0,3), (0,4) and (0,5)\n  - two oranges (7) at (2,4) and (2,5)\n  - two azures (8) at (3,4) and (3,5)\n  - maroon (9) at (5,5)\n\ndifferences:\n  cells_changed: 2\n  colors_changed: none - same palette of colors in both\ntransformation:\n  - non-zero pixels shifted down and left to form horizontal line on bottom\n  - duplicate pixels are removed (azure '8' from input (3,1))\n  - color values appear to maintain relative order\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.08225628025623975,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 2850,
+    "candidates_token_count": 362,
+    "total_token_count": 3212,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 4689,
+    "candidates": 665,
+    "total": 5354,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 8.320348,
+    "total_elapsed": 16.070095,
+    "response_times": [
+      7.607004,
+      8.320348
+    ]
+  }
+}

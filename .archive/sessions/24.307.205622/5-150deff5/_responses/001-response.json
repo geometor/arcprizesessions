@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\ninput:\n  width: 11\n  height: 9\n  colors:\n    - 0: 68\n    - 5: 13\nobjects:\n  - a gray (5) object shaped like a \"7\" rotated 90 degrees clockwise\n\noutput:\n  width: 11\n  height: 9\n  colors:\n    - 0: 68\n    - 2: 6\n    - 8: 7\nobjects:\n  - an azure (8) object shaped like a \"7\" rotated 90 degrees clockwise\n  - a smaller red (2) object where the concave portion of the larger object is located.\ndifferences:\n  cells_changed: 13\n  colors_changed: gray (5) pixels became either red (2) or azure (8)\ntransformation:\n  - The gray object in the input has been split into two objects in the output. The outer portion of the object has been changed to azure, while a smaller red object fills the concave section of the original object.\n```\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.2814918422299948,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 2189,
+    "candidates_token_count": 239,
+    "total_token_count": 2428,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 2189,
+    "candidates": 239,
+    "total": 2428,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 5.930066,
+    "total_elapsed": 6.028273,
+    "response_times": [
+      5.930066
+    ]
+  }
+}

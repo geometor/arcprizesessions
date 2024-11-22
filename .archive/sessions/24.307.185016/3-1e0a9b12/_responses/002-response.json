@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\nexample_2:\n  input:\n    width: 6\n    height: 6\n    colors:\n      - 0: 29\n      - 4: 3\n      - 7: 2\n      - 8: 2\n      - 9: 1\n    objects:\n      - yellow: size 3x1, position (3,0), (4,0), (5,0)\n      - orange: size 2x1, position (4,2), (5,2)\n      - azure: size 2x1, position (4,3), (5,3)\n      - maroon: size 1x1, position (0,5)\n  output:\n    width: 6\n    height: 6\n    colors:\n      - 0: 33\n      - 4: 3\n      - 7: 2\n      - 8: 2\n      - 9: 1\n    objects:\n      - yellow: size 3x1, position (3,0), (4,0), (5,0)\n      - orange: size 2x1, position (4,2), (5,2)\n      - azure: size 2x1, position (4,3), (5,3)\n      - maroon: size 1x1, position (5,5)\n  differences:\n    cells_changed: 3\n    colors_changed: The maroon and azure objects moved to the bottom row, maintaining their relative positions.\n  transformation:\n    - Non-zero values in the bottom two rows are shifted to the bottom-right while maintaining relative positions.  The rest remain unchanged.\n\n```\n\nBoth examples demonstrate a pattern of moving non-zero elements to the bottom-right corner of the grid while preserving their relative positions.  The key difference is that Example 1 moves *all* non-zero elements, while Example 2 only moves those in the bottom two rows.  This suggests a possible rule based on row position.  Further examples are needed to definitively determine the rule.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.07741855752879176,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 2936,
+    "candidates_token_count": 464,
+    "total_token_count": 3400,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 4775,
+    "candidates": 854,
+    "total": 5629,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.983408,
+    "total_elapsed": 6.134023,
+    "response_times": [
+      3.002656,
+      2.983408
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\ninput:\n  width: 9\n  height: 8\n  colors:\n    - 0: 52\n    - 5: 12\nobjects:\n  - a gray (5) object shaped like a \"7\".\n\noutput:\n  width: 9\n  height: 8\n  colors:\n    - 0: 52\n    - 2: 5\n    - 8: 7\nobjects:\n  - an azure (8) object shaped like a \"7\" but missing the initial horizontal bar.\n  - a red (2) object that represents the missing part of the \"7\".\n\ndifferences:\n  cells_changed: 12\n  colors_changed: gray (5) pixels became either red (2) or azure (8).\ntransformation:\n  - The transformation is consistent with the previous two examples.  The original gray (5) object has been split and re-colored into azure (8) and red (2) objects.  The azure object resembles the original object with a part missing and the red object represents the missing part.\n```\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.1953568652393372,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 4418,
+    "candidates_token_count": 246,
+    "total_token_count": 4664,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 9926,
+    "candidates": 725,
+    "total": 10651,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 8.901658,
+    "total_elapsed": 20.976983,
+    "response_times": [
+      5.930066,
+      5.834675,
+      8.901658
+    ]
+  }
+}

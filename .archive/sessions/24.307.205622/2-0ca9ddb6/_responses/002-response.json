@@ -1,0 +1,39 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\ninput:\n  width: 9\n  height: 9\n  colors:\n    - 0: 77\n    - 1: 2\n    - 2: 2\n    - 8: 1\nobjects:\n  - two red (2) pixels at (6,2) and (1,7)\n  - two blue (1) pixels at (2,3) and (6,6)\n  - one azure (8) pixel at (3,0)\n\noutput:\n  width: 9\n  height: 9\n  colors:\n    - 0: 64\n    - 1: 2\n    - 2: 2\n    - 4: 4\n    - 7: 6\n    - 8: 1\nobjects:\n  - the original red (2) pixels remain at (6,2) and (1,7)\n  - the original blue (1) pixels remain at (2,3) and (6,6)\n  - the original azure (8) pixel remains at (3,0)\n  - yellow (4) plus signs around each red (2) pixel\n  - orange (7) hollow squares around each blue (1) pixel\n\ndifferences:\n  cells_changed: 10\n  colors_changed:\n    - four cells changed to yellow (4) for each red (2) pixel\n    - four cells changed to orange (7) for each blue (1) pixel\ntransformation:\n  - The same transformation as in Example 1 is applied to each red (2) and blue (1) pixel. Other color pixels like azure (8) are unchanged.\n```\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.05547777980328871,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 3343,
+    "candidates_token_count": 377,
+    "total_token_count": 3720,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 5459,
+    "candidates": 705,
+    "total": 6164,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 9.236372,
+    "total_elapsed": 17.22011,
+    "response_times": [
+      7.7835,
+      9.236372
+    ]
+  }
+}

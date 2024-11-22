@@ -1,7 +1,9 @@
+from ablog.conf import *
 from photon_platform.sphinxilator.global_conf import *
-import geometor.arcprizesessions as module
 
-version = module.__version__
+#  import geometor.arcprizesessions as module
+
+#  version = module.__version__
 
 org = "geometor"
 org_name = "geometor"

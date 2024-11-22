@@ -13,18 +13,19 @@ recent logs
 
 .. toctree::
    :hidden:
-   :maxdepth: 2
+   :maxdepth: 1
 
-   mission/index.rst
-   usage/index.rst
-   modules/index.rst
-   logs.rst
-   demos/index.rst
-   refs/index.rst
-   todos.rst
-   changelog.rst
-   connect.rst
-   about.rst
+   .. mission/index
+   .. usage/index
+   .. modules/index
+   sessions/index
+   logs
+   .. demos/index
+   refs/index
+   todos
+   .. changelog.rst
+   connect
+   about
 
 
 indices

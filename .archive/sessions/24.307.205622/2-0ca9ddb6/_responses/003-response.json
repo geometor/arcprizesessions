@@ -1,0 +1,40 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\ninput:\n  width: 9\n  height: 9\n  colors:\n    - 0: 79\n    - 1: 1\n    - 2: 1\n    - 6: 1\nobjects:\n  - a single red (2) pixel at (2,2)\n  - a single blue (1) pixel at (3,7)\n  - a single magenta (6) pixel at (6,5)\n\noutput:\n  width: 9\n  height: 9\n  colors:\n    - 0: 73\n    - 1: 1\n    - 2: 1\n    - 4: 4\n    - 6: 1\n    - 7: 4\nobjects:\n  - the original red (2) pixel remains at (2,2)\n  - the original blue (1) pixel remains at (3,7)\n  - the original magenta (6) pixel remains at (6,5)\n  - four yellow (4) pixels positioned above and below the red pixel, offset left and right\n  - four orange (7) pixels surrounding the blue pixel\n\ndifferences:\n  cells_changed: 8\n  colors_changed: \n    - four cells changed to yellow (4)\n    - four cells changed to orange (7)\ntransformation:\n  - As in the previous examples, a yellow (4) \"plus sign\" is drawn around the red (2) pixels, and an orange (7) \"hollow square\" is drawn around the blue (1) pixels. The magenta (6) pixel remains unchanged. It appears that the rule applies only to red (2) and blue (1) pixels.\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.05341456448220458,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 4619,
+    "candidates_token_count": 382,
+    "total_token_count": 5001,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 10078,
+    "candidates": 1087,
+    "total": 11165,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 8.97206,
+    "total_elapsed": 26.307199,
+    "response_times": [
+      7.7835,
+      9.236372,
+      8.97206
+    ]
+  }
+}

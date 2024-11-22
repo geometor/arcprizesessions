@@ -1,0 +1,38 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "```yaml\ninput:\n  width: 7\n  height: 7\n  colors:\n    - 0: 46\n    - 8: 6\nobjects:\n  - two distinct objects of azure color (8). One is composed of two pixels and another one of three pixels.\n\noutput:\n  width: 7\n  height: 7\n  colors:\n    - 0: 44\n    - 1: 2\n    - 8: 6\nobjects:\n  - same objects as input\n  - two new objects made of blue pixels (1)\n\ndifferences:\n  cells_changed: 2\n  colors_changed: two cells changed from white (0) to blue (1)\ntransformation:\n  - For each azure (8) object insert a new blue (1) object in an empty cell immediately to the right and down from its top left pixel.  If there is an azure (8) object in the place where blue should be placed, it's skipped (bottom right corner for the bigger object).\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.5286941202277811,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 1981,
+    "candidates_token_count": 234,
+    "total_token_count": 2215,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 1981,
+    "candidates": 234,
+    "total": 2215,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 5.914989,
+    "total_elapsed": 5.988599,
+    "response_times": [
+      5.914989
+    ]
+  }
+}
