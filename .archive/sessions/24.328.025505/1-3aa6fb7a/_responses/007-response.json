@@ -1,0 +1,149 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 1.0,
+                "color": 1.0,
+                "column1": 0.0,
+                "column2": 0.0,
+                "row1": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 1.0,
+                "row": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 6.0,
+                "row": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 0.0,
+                "row": 2.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 3.0,
+                "row": 3.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 3.0,
+                "row": 4.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 4.0,
+                "row": 4.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 1.0,
+                "row": 5.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 0.0,
+                "row": 6.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 1.0,
+                "row": 6.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "submit",
+              "args": {}
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.021044471370640087,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 7913,
+    "candidates_token_count": 67,
+    "total_token_count": 7980,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 37592,
+    "candidates": 4075,
+    "total": 41667,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.498013,
+    "total_elapsed": 36.511534,
+    "response_times": [
+      7.858792,
+      7.697502,
+      5.264364,
+      5.463165,
+      1.165893,
+      6.069692,
+      2.498013
+    ]
+  }
+}

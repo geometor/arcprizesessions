@@ -1,0 +1,88 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 2.0,
+                "column": 1.0,
+                "row": 0.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 2.0,
+                "column": 0.0,
+                "row": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 2.0,
+                "column": 2.0,
+                "row": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 2.0,
+                "column": 1.0,
+                "row": 2.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "submit",
+              "args": {}
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.010568876266479493,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 9773,
+    "candidates_token_count": 25,
+    "total_token_count": 9798,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 49834,
+    "candidates": 5752,
+    "total": 55586,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.082425,
+    "total_elapsed": 50.423563,
+    "response_times": [
+      8.995215,
+      5.849353,
+      5.94693,
+      11.148125,
+      5.268273,
+      1.247054,
+      9.226114,
+      2.082425
+    ]
+  }
+}

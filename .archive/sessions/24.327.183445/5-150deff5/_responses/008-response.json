@@ -1,0 +1,166 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 0.0,
+                "row1": 0.0,
+                "column2": 3.0,
+                "color": 8.0,
+                "column1": 2.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 0.0,
+                "row1": 0.0,
+                "column1": 5.0,
+                "column2": 7.0,
+                "color": 2.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 1.0,
+                "row1": 1.0,
+                "column1": 2.0,
+                "color": 8.0,
+                "column2": 3.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 8.0,
+                "column": 6.0,
+                "row": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 2.0,
+                "row1": 2.0,
+                "column2": 3.0,
+                "color": 2.0,
+                "column1": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 2.0,
+                "row1": 2.0,
+                "column1": 4.0,
+                "column2": 6.0,
+                "color": 8.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 3.0,
+                "row1": 3.0,
+                "column1": 4.0,
+                "color": 2.0,
+                "column2": 6.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 4.0,
+                "color": 8.0,
+                "column1": 3.0,
+                "column2": 5.0,
+                "row1": 4.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 5.0,
+                "row1": 5.0,
+                "column2": 6.0,
+                "column1": 5.0,
+                "color": 2.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 6.0,
+                "color": 2.0,
+                "column2": 6.0,
+                "column1": 5.0,
+                "row1": 6.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "submit",
+              "args": {}
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.005344757308130679,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 13886,
+    "candidates_token_count": 115,
+    "total_token_count": 14001,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 71899,
+    "candidates": 8753,
+    "total": 80652,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 3.50902,
+    "total_elapsed": 74.739333,
+    "response_times": [
+      12.653595,
+      12.166814,
+      8.796297,
+      18.559557,
+      7.576084,
+      1.644036,
+      9.004783,
+      3.50902
+    ]
+  }
+}

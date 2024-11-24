@@ -1,21 +1,17 @@
 sessions
 ========
 
-
-.. .. list-table:: 
-   .. :header-rows: 1
-
-   .. * - date
-     .. - model
-     .. - puzzles
-   .. * - :doc:`24.307.221454/index`
-     .. - models/gemini-flash-1.5-002
-     .. - 6
-
-
-
 .. toctree::
    :maxdepth: 1
-   :glob:
 
-   */index
+
+   24.328.184327/index
+
+   24.328.192548/index
+
+   24.328.192823/index
+
+   24.328.193128/index
+
+   24.328.193805/index
+

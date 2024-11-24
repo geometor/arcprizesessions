@@ -1,0 +1,54 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The input grid in example 2 shows another cluster of azure (8) pixels, this time in a more irregular, L-shaped pattern. The output grid is again very similar, with some azure pixels changed to blue (1) pixels.  The changes seem to follow the same rule as in example 1: azure pixels adjacent to white pixels are changed to blue.\n\n\n"
+          },
+          {
+            "executable_code": {
+              "language": 1,
+              "code": "\nimport numpy as np\n\ninput_grid = np.array([[0, 0, 0, 0, 8, 8, 0],\n                      [0, 0, 0, 0, 0, 8, 0],\n                      [0, 0, 8, 0, 0, 0, 0],\n                      [0, 0, 8, 8, 0, 0, 0],\n                      [0, 0, 0, 0, 0, 0, 0],\n                      [0, 0, 0, 0, 8, 0, 0],\n                      [0, 0, 0, 8, 8, 0, 0]])\n\noutput_grid = np.array([[0, 0, 0, 0, 8, 8, 0],\n                       [0, 0, 0, 0, 1, 8, 0],\n                       [0, 0, 8, 1, 0, 0, 0],\n                       [0, 0, 8, 8, 0, 0, 0],\n                       [0, 0, 0, 0, 0, 0, 0],\n                       [0, 0, 0, 1, 8, 0, 0],\n                       [0, 0, 0, 8, 8, 0, 0]])\n\ndiff = np.where(input_grid != output_grid)\nchanged_cells = len(diff[0])\nprint(f\"Number of cells changed: {changed_cells}\")\nprint(f\"Coordinates of changed cells: {list(zip(diff[0], diff[1]))}\")\n\n# Check for pattern: azure (8) adjacent to white (0) changed to blue (1)\n\nfor r, c in zip(diff[0], diff[1]):\n    if input_grid[r,c] == 8:\n        adjacent_to_white = False\n        for dr, dc in [(-1, 0), (1, 0), (0, -1), (0, 1)]:\n            nr, nc = r + dr, c + dc\n            if 0 <= nr < input_grid.shape[0] and 0 <= nc < input_grid.shape[1] and input_grid[nr, nc] == 0:\n                adjacent_to_white = True\n                break\n        if not adjacent_to_white:\n            print(f\"Error: Azure cell at ({r},{c}) changed but not adjacent to white.\")\n\n"
+            }
+          },
+          {
+            "code_execution_result": {
+              "outcome": 1,
+              "output": "Number of cells changed: 3\nCoordinates of changed cells: [(np.int64(1), np.int64(4)), (np.int64(2), np.int64(3)), (np.int64(5), np.int64(3))]\n"
+            }
+          },
+          {
+            "text": "```yaml\ninput:\n  width: 7\n  height: 7\n  colors:\n    - 0: 37\n    - 8: 9\n  objects:\n    - size: 9, position: center-right, color: azure\n\noutput:\n  width: 7\n  height: 7\n  colors:\n    - 0: 37\n    - 8: 6\n    - 1: 3\n  objects:\n    - size: 6, position: center-right, color: azure\n    - size: 3, position: center-right, color: blue\n\ndifferences:\n  cells_changed: 3\n  colors_changed: 3 azure pixels changed to blue.\ntransformation:\n  - Azure pixels adjacent to white pixels are changed to blue.\n```\n\nThe code confirms the change of three azure pixels to blue pixels.  The pattern continues to hold: Azure pixels adjacent to white pixels are changed to blue.  There are no other changes to the grid.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.011869432510360229,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 4095,
+    "candidates_token_count": 969,
+    "total_token_count": 5064,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 6444,
+    "candidates": 1930,
+    "total": 8374,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 8.494599,
+    "total_elapsed": 17.424524,
+    "response_times": [
+      8.745361,
+      8.494599
+    ]
+  }
+}

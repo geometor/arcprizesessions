@@ -1,0 +1,127 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 1.0,
+                "row": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 0.0,
+                "row": 2.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 6.0,
+                "row": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 3.0,
+                "row": 3.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 3.0,
+                "row": 4.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 1.0,
+                "row": 5.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 0.0,
+                "row": 6.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 1.0,
+                "row": 6.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "submit",
+              "args": {}
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.03747308984094737,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 9991,
+    "candidates_token_count": 49,
+    "total_token_count": 10040,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 45763,
+    "candidates": 6081,
+    "total": 51844,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.275323,
+    "total_elapsed": 44.994489,
+    "response_times": [
+      10.134352,
+      10.308991,
+      6.322792,
+      6.390493,
+      1.348178,
+      7.702671,
+      2.275323
+    ]
+  }
+}

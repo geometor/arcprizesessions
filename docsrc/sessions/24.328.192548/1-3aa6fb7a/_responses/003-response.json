@@ -1,0 +1,24 @@
+{
+  "usage_metadata": {
+    "prompt_token_count": 4680,
+    "total_token_count": 4680,
+    "cached_content_token_count": 0,
+    "candidates_token_count": 0
+  },
+  "candidates": [],
+  "token_totals": {
+    "prompt": 11028,
+    "candidates": 1810,
+    "total": 12838,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 18.008712,
+    "total_elapsed": 33.04182,
+    "response_times": [
+      8.189544,
+      6.613937,
+      18.008712
+    ]
+  }
+}
