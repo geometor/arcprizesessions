@@ -1,0 +1,63 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "This example follows the same pattern as the previous three, with each column containing a single color. The output grid also has three columns with each column a different single color.\n\n```yaml\ninput:\n  width: 3\n  height: 3\n  colors:\n    - 9: 3\n    - 4: 3\n    - 2: 3\n  objects:\n    - three columns of color\noutput:\n  width: 3\n  height: 3\n  colors:\n    - 8: 3\n    - 3: 3\n    - 6: 3\n  objects:\n    - three columns of color\ndifferences:\n  cells_changed: 9\n  colors_changed: all colors changed to a new color\ntransformation:\n  color value mapping 9->8, 4->3, 2->6\n```\n\ncode_execution:\n```python\nimport numpy as np\ninput_grid = np.array([[9, 4, 2], [9, 4, 2], [9, 4, 2]])\noutput_grid = np.array([[8, 3, 6], [8, 3, 6], [8, 3, 6]])\n\ndef find_color_mapping(in_grid, out_grid):\n    color_map = {}\n    for i in range(in_grid.shape[0]):\n        for j in range(in_grid.shape[1]):\n            color_map[in_grid[i, j]] = out_grid[i, j]\n    return color_map\n\ncolor_map = find_color_mapping(input_grid, output_grid)\nprint(color_map)\n\n```\ncode_execution_result: 1\n```\n{np.int64(9): np.int64(8), np.int64(4): np.int64(3), np.int64(2): np.int64(6)}\n\n```\nThe code confirms the color mapping speculation: 9->8, 4->3, 2->6.\n\nThe natural language program for this transformation is to map the color values in the input grid to the specified color values in the output grid according to the mapping 9->8, 4->3, 2->6.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "index": 0,
+      "safety_ratings": [
+        {
+          "category": 9,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 8,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 7,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 10,
+          "probability": 1,
+          "blocked": false
+        }
+      ],
+      "token_count": 0,
+      "grounding_attributions": [],
+      "avg_logprobs": 0.0
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 5528,
+    "candidates_token_count": 520,
+    "total_token_count": 6048,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 15388,
+    "candidates": 1619,
+    "total": 17007,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 18.661073,
+    "total_elapsed": 85.064033,
+    "response_times": [
+      28.168764,
+      18.265756,
+      19.685116,
+      18.661073
+    ]
+  }
+}

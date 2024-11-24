@@ -1,0 +1,107 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 2.0,
+                "color": 9.0,
+                "column1": 0.0,
+                "row1": 0.0,
+                "column2": 0.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 2.0,
+                "color": 5.0,
+                "column1": 1.0,
+                "row1": 0.0,
+                "column2": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_range",
+              "args": {
+                "row2": 2.0,
+                "row1": 0.0,
+                "column1": 2.0,
+                "color": 4.0,
+                "column2": 2.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "submit",
+              "args": {}
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "index": 0,
+      "safety_ratings": [
+        {
+          "category": 9,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 8,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 10,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 7,
+          "probability": 1,
+          "blocked": false
+        }
+      ],
+      "token_count": 0,
+      "grounding_attributions": [],
+      "avg_logprobs": 0.0
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 8351,
+    "candidates_token_count": 125,
+    "total_token_count": 8476,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 51619,
+    "candidates": 3385,
+    "total": 55004,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 5.162363,
+    "total_elapsed": 157.153597,
+    "response_times": [
+      28.168764,
+      18.265756,
+      19.685116,
+      18.661073,
+      27.794367,
+      17.334741,
+      6.903391,
+      14.590714,
+      5.162363
+    ]
+  }
+}

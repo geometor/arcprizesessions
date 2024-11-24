@@ -1,0 +1,84 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 2.0,
+                "column": 0.0,
+                "row": 0.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 2.0,
+                "column": 0.0,
+                "row": 2.0
+              }
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "index": 0,
+      "safety_ratings": [
+        {
+          "category": 8,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 7,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 10,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 9,
+          "probability": 1,
+          "blocked": false
+        }
+      ],
+      "token_count": 0,
+      "grounding_attributions": [],
+      "avg_logprobs": 0.0
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 10043,
+    "candidates_token_count": 50,
+    "total_token_count": 10093,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 57139,
+    "candidates": 3730,
+    "total": 60869,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 6.69023,
+    "total_elapsed": 208.141034,
+    "response_times": [
+      43.931057,
+      45.170367,
+      48.155868,
+      36.267702,
+      10.86882,
+      2.896088,
+      13.528758,
+      6.69023
+    ]
+  }
+}
