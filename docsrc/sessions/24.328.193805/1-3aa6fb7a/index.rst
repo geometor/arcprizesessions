@@ -148,3 +148,9 @@
      - 99.65s
      - 1,122,223
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+   :glob:
+
+   *-submission
