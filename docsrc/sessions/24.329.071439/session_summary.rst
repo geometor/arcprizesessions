@@ -4,11 +4,11 @@ results
 .. list-table::
    :header-rows: 1
 
-   * - Puzzle Folder
-     - Submission File Found
-     - Size Correct
-     - Colors Correct
-     - Unique Color Count Diff
+   * - Puzzle
+     - Submission
+     - Size
+     - Colors
+     - Color Count Diff
      - Pixel Accuracy
 
    * - 1-3aa6fb7a
@@ -43,7 +43,7 @@ results
      - 81.81818181818183%
    * - 6-0520fde7
      - No
-     - N/A
-     - N/A
-     - N/A
-     - N/A
+     - 
+     - 
+     - 
+     - 

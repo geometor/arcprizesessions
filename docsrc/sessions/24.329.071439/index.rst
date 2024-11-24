@@ -1,6 +1,8 @@
 24.329.071439
 =============
 
+:model: models/gemini-exp-1114
+
 .. toctree::
    :maxdepth: 1
    :hidden:

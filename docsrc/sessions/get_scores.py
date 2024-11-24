@@ -16,15 +16,15 @@ def generate_session_summary(output_path, session_dir):
 
     # Header for RST file
     rst_content = [
-        "Session Summary\n",
-        "===============\n\n",
+        "results\n",
+        "-------\n\n",
         ".. list-table::\n",
         "   :header-rows: 1\n\n",
-        "   * - Puzzle Folder\n",
-        "     - Submission File Found\n",
-        "     - Size Correct\n",
-        "     - Colors Correct\n",
-        "     - Unique Color Count Diff\n",
+        "   * - Puzzle\n",
+        "     - Submission\n",
+        "     - Size\n"
+        "     - Colors\n",
+        "     - Color Count Diff\n",
         "     - Pixel Accuracy\n\n"
     ]
 
@@ -43,15 +43,15 @@ def generate_session_summary(output_path, session_dir):
                     unique_color_diff = re.search(r":Unique Color Count Diff: (\{.*?\})", content)
                     pixel_accuracy = re.search(r":Pixel Accuracy: ([\d\.]+)%", content)
 
-                    size_correct = size_correct.group(1) if size_correct else "N/A"
-                    colors_correct = colors_correct.group(1) if colors_correct else "N/A"
-                    unique_color_diff = unique_color_diff.group(1) if unique_color_diff else "N/A"
-                    pixel_accuracy = pixel_accuracy.group(1) + "%" if pixel_accuracy else "N/A"
+                    size_correct = size_correct.group(1) if size_correct else ""
+                    colors_correct = colors_correct.group(1) if colors_correct else ""
+                    unique_color_diff = unique_color_diff.group(1) if unique_color_diff else ""
+                    pixel_accuracy = pixel_accuracy.group(1) + "%" if pixel_accuracy else ""
             else:
-                size_correct = "N/A"
-                colors_correct = "N/A"
-                unique_color_diff = "N/A"
-                pixel_accuracy = "N/A"
+                size_correct = ""
+                colors_correct = ""
+                unique_color_diff = ""
+                pixel_accuracy = ""
 
             # Add row to the RST list-table
             rst_content.append(f"   * - {puzzle.name}\n")

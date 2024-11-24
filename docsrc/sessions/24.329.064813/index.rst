@@ -1,6 +1,8 @@
 24.329.064813
 =============
 
+:model: models/gemini-1.5-flash-002
+
 .. toctree::
    :maxdepth: 1
    :hidden:
