@@ -19,6 +19,12 @@
    002-prompt
    002-response
 
+   003-prompt
+   003-response
+
+   004-prompt
+   004-response
+
 
 .. list-table:: steps
    :header-rows: 1
@@ -39,10 +45,20 @@
      - 56.41s
      - 9,332
    
+   * - :doc:`003 <003-prompt>`
+     - example_summary
+     - 144.73s
+     - 15,850
+   
+   * - :doc:`004 <004-prompt>`
+     - test input
+     - 48.67s
+     - 29,228
+   
    * - **TOTAL**
      -
-     - 99.13s
-     - 12,003
+     - 292.53s
+     - 57,081
 
 
 .. toctree::
