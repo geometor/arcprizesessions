@@ -1,0 +1,90 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 3.0,
+                "column": 4.0,
+                "row": 4.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 6.0,
+                "column": 5.0,
+                "row": 4.0
+              }
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "index": 0,
+      "safety_ratings": [
+        {
+          "category": 8,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 9,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 7,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 10,
+          "probability": 1,
+          "blocked": false
+        }
+      ],
+      "token_count": 0,
+      "grounding_attributions": [],
+      "avg_logprobs": 0.0
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 15872,
+    "candidates_token_count": 50,
+    "total_token_count": 15922,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 153374,
+    "candidates": 9736,
+    "total": 163110,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 19.468816,
+    "total_elapsed": 322.288531,
+    "response_times": [
+      40.946161,
+      48.647636,
+      44.249476,
+      62.81089,
+      31.233154,
+      2.416215,
+      16.906776,
+      5.113366,
+      18.46388,
+      4.120299,
+      12.734947,
+      3.196133,
+      10.855481,
+      19.468816
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <id>https://geometor.github.io/arcprizesessions</id>
+  <title>geometor • arcprizesessions</title>
+  <updated>2024-11-27T02:16:37.055137+00:00</updated>
+  <link href="https://geometor.github.io/arcprizesessions"/>
+  <link href="https://geometor.github.io/arcprizesessions/log/atom.xml" rel="self"/>
+  <generator uri="https://ablog.readthedocs.org/" version="unknown.dev">ABlog</generator>
+  <entry>
+    <id>https://geometor.github.io/arcprizesessions/log/24.326-194542/</id>
+    <title>Moving the session reports</title>
+    <updated>2024-11-21T19:45:42-08:00</updated>
+    <content type="html">&lt;div class="ablog-post-excerpt docutils container"&gt;
+&lt;p&gt;now keeping reports out of the code base repo&lt;/p&gt;
+&lt;/div&gt;
+</content>
+    <link href="https://geometor.github.io/arcprizesessions/log/24.326-194542/" rel="alternate"/>
+    <summary>now keeping reports out of the code base repo</summary>
+    <published>2024-11-21T19:45:42-08:00</published>
+  </entry>
+</feed>

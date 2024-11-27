@@ -1,0 +1,54 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "The input grid is a 6x6 grid.  It contains several colored cells (yellow, orange, azure, maroon) scattered within a field of white cells. The output grid is identical except the colored cells in the bottom two rows have been moved to form a contiguous block at the bottom right of the grid, maintaining their relative positions. The transformation is similar to the first example: the colored cells are aggregated into a block in the bottom row(s).\n\n"
+          },
+          {
+            "executable_code": {
+              "language": 1,
+              "code": "\nimport numpy as np\n\ninput_grid = np.array([[0, 0, 0, 0, 0, 9],\n                      [0, 0, 0, 8, 0, 0],\n                      [0, 0, 0, 0, 0, 0],\n                      [4, 0, 0, 0, 0, 0],\n                      [4, 0, 7, 8, 0, 0],\n                      [4, 0, 7, 0, 0, 0]])\n\noutput_grid = np.array([[0, 0, 0, 0, 0, 0],\n                       [0, 0, 0, 0, 0, 0],\n                       [0, 0, 0, 0, 0, 0],\n                       [4, 0, 0, 0, 0, 0],\n                       [4, 0, 7, 8, 0, 0],\n                       [4, 0, 7, 8, 0, 9]])\n\nprint(\"Input Grid:\\n\", input_grid)\nprint(\"\\nOutput Grid:\\n\", output_grid)\n\ninput_colors = {}\noutput_colors = {}\n\nfor color in np.unique(input_grid):\n    input_colors[color] = np.count_nonzero(input_grid == color)\n\nfor color in np.unique(output_grid):\n    output_colors[color] = np.count_nonzero(output_grid == color)\n\nprint(\"\\nInput Colors:\", input_colors)\nprint(\"\\nOutput Colors:\", output_colors)\n\ncells_changed = np.sum(input_grid != output_grid)\nprint(\"\\nCells Changed:\", cells_changed)\n"
+            }
+          },
+          {
+            "code_execution_result": {
+              "outcome": 1,
+              "output": "Input Grid:\n [[0 0 0 0 0 9]\n [0 0 0 8 0 0]\n [0 0 0 0 0 0]\n [4 0 0 0 0 0]\n [4 0 7 8 0 0]\n [4 0 7 0 0 0]]\n\nOutput Grid:\n [[0 0 0 0 0 0]\n [0 0 0 0 0 0]\n [0 0 0 0 0 0]\n [4 0 0 0 0 0]\n [4 0 7 8 0 0]\n [4 0 7 8 0 9]]\n\nInput Colors: {np.int64(0): 28, np.int64(4): 3, np.int64(7): 2, np.int64(8): 2, np.int64(9): 1}\n\nOutput Colors: {np.int64(0): 28, np.int64(4): 3, np.int64(7): 2, np.int64(8): 2, np.int64(9): 1}\n\nCells Changed: 4\n"
+            }
+          },
+          {
+            "text": "```yaml\ninput:\n  width: 6\n  height: 6\n  colors:\n    - 0: 28\n    - 4: 3\n    - 7: 2\n    - 8: 2\n    - 9: 1\n  objects:\n    - size: 1x1, position: (0,5), color: maroon\n    - size: 1x1, position: (1,3), color: azure\n    - size: 1x1, position: (3,0), color: yellow\n    - size: 1x1, position: (4,0), color: yellow\n    - size: 1x1, position: (4,2), color: orange\n    - size: 1x1, position: (4,3), color: azure\n    - size: 1x1, position: (5,0), color: yellow\n    - size: 1x1, position: (5,2), color: orange\n\noutput:\n  width: 6\n  height: 6\n  colors:\n    - 0: 28\n    - 4: 3\n    - 7: 2\n    - 8: 2\n    - 9: 1\n  objects:\n    - size: 1x1, position: (3,0), color: yellow\n    - size: 1x1, position: (4,0), color: yellow\n    - size: 1x1, position: (4,2), color: orange\n    - size: 1x1, position: (4,3), color: azure\n    - size: 1x1, position: (5,0), color: yellow\n    - size: 1x1, position: (5,2), color: orange\n    - size: 1x1, position: (5,3), color: azure\n    - size: 1x1, position: (5,5), color: maroon\n\ndifferences:\n  cells_changed: 4\n  colors_changed: No colors changed, only positions\ntransformation:\n  - The colored cells are moved to the bottom two rows, maintaining their relative positions.  The aggregation forms a rectangular block.\n```\n\nThe transformation in this example is similar to the first one. Non-white cells are moved to the bottom right, maintaining relative positions to each other.  The difference is that the aggregation spans two rows to accommodate the greater number of non-white cells.\n\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.02746001873560517,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 3915,
+    "candidates_token_count": 1367,
+    "total_token_count": 5282,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 6103,
+    "candidates": 2356,
+    "total": 8459,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 16.385089,
+    "total_elapsed": 28.553024,
+    "response_times": [
+      12.007721,
+      16.385089
+    ]
+  }
+}
