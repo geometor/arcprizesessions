@@ -1,0 +1,64 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "code_execution_result: 1\n```\n[[0 0 0 0 0]\n [0 0 0 0 0]\n [0 0 6 0 0]\n [5 2 0 4 0]\n [5 2 6 4 3]]\n```\nThe test input is a 5x5 grid. The colored pixels are red(2), yellow(4), green(3), gray(5), magenta(6), gray(5), red(2), yellow(4), gray(5).\n\ncode_execution:\n```python\nimport numpy as np\n\ndef transform_grid(input_grid):\n    height, width = input_grid.shape\n    colored_pixels = []\n    for r in range(height):\n        for c in range(width):\n            if input_grid[r, c] != 0:\n                colored_pixels.append((input_grid[r, c], (r,c)))\n\n    output_grid = np.zeros_like(input_grid)\n    bottom_row_idx = height -1\n\n    # Preserve existing colors in the bottom row\n    for color, (r, c) in colored_pixels:\n        if r == bottom_row_idx:\n            output_grid[r, c] = color\n    \n    #Place remaining pixels\n    next_available_col = 0\n    for color, (r,c) in colored_pixels:\n        if r != bottom_row_idx:\n            while next_available_col < width and output_grid[bottom_row_idx, next_available_col] != 0:\n                next_available_col += 1\n            if next_available_col < width:\n                output_grid[bottom_row_idx, next_available_col] = color\n                next_available_col += 1  #move to the next available spot\n\n    return output_grid\n\ninput_grid = np.array([[0, 2, 0, 4, 3],\n                      [5, 0, 0, 0, 0],\n                      [0, 0, 6, 0, 0],\n                      [5, 2, 0, 4, 0],\n                      [5, 0, 0, 0, 0]])\n\noutput_grid = transform_grid(input_grid)\nprint(output_grid)\n```\n\n```yaml\ninput:\n  width: 5\n  height: 5\n  colors:\n    0: 16\n    2: 2\n    3: 1\n    4: 2\n    5: 3\n    6: 1\n  objects:\n    - nine single pixels of various colors scattered on the grid\n```\n\n```yaml\noutput:\n  width: 5\n  height: 5\n  colors:\n    0: 16\n    2: 2\n    3: 1\n    4: 2\n    5: 3\n    6: 1\n  objects:\n    - gray(5), red(2), magenta(6), yellow(4) at (3,0), (3,1), (2,2), (3,3) are preserved in place\n    - other pixels are copied to the bottom row in scan order: gray(5), red(2), yellow(4), green(3) -> (4,0), (4,1), (4,3), (4,4) and magenta(6) is already in place from the original bottom row\n```\n\n```yaml\ndifferences:\n  cells_changed: 6\n  colors_changed: no\n  transformation:\n    - The transformation moves all colored pixels to the bottom row, keeping the same color and count in scan order from left-to-right, top-to-bottom.\n    - If a colored pixel was originally on the bottom row, it is preserved in place\n```\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "index": 0,
+      "safety_ratings": [
+        {
+          "category": 9,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 8,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 7,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 10,
+          "probability": 1,
+          "blocked": false
+        }
+      ],
+      "token_count": 0,
+      "grounding_attributions": [],
+      "avg_logprobs": 0.0
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 9690,
+    "candidates_token_count": 882,
+    "total_token_count": 10572,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 32570,
+    "candidates": 4589,
+    "total": 37159,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 19.572405,
+    "total_elapsed": 228.386538,
+    "response_times": [
+      63.605234,
+      74.055192,
+      56.19076,
+      14.512189,
+      19.572405
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-1-3aa6fb7a
+6-0520fde7
 ==========
 
 .. image:: _images/000-example_1_input.png
@@ -37,28 +37,28 @@
    
    * - :doc:`001 <001-prompt>`
      - example_1
-     - 42.72s
-     - 2,671
+     - 49.73s
+     - 2,541
    
    * - :doc:`002 <002-prompt>`
      - example_2
-     - 56.41s
-     - 9,332
+     - 40.07s
+     - 7,700
    
    * - :doc:`003 <003-prompt>`
-     - example_summary
-     - 144.73s
-     - 15,850
+     - example_3
+     - 81.00s
+     - 14,668
    
    * - :doc:`004 <004-prompt>`
-     - test input
-     - 48.67s
-     - 29,228
+     - example_summary
+     - 76.01s
+     - 21,782
    
    * - **TOTAL**
      -
-     - 292.53s
-     - 57,081
+     - 246.81s
+     - 46,691
 
 
 .. toctree::
