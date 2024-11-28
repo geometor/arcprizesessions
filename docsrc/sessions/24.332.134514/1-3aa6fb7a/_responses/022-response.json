@@ -1,0 +1,59 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "\uc8c4\uc1a1\ud569\ub2c8\ub2e4. \uc774\uc804 \uc751\ub2f5\uc5d0\uc11c \uc81c\uac00 \uc81c\uacf5\ud55c \ucf54\ub4dc\ub294 \uc608\uc81c\uc5d0 \uc8fc\uc5b4\uc9c4 \ucd9c\ub825\uacfc \uc77c\uce58\ud558\uc9c0 \uc54a\uc558\uc2b5\ub2c8\ub2e4.  \uc81c\uac00 \uc798\ubabb \uc774\ud574\ud588\uac70\ub098 \uc608\uc81c \ucd9c\ub825 \uc790\uccb4\uc5d0 \uc624\ub958\uac00 \uc788\uc5c8\ub358 \uac83 \uac19\uc2b5\ub2c8\ub2e4.  \uc81c\uacf5\ub41c \uc608\uc81c\uac00 \ubd88\uc77c\uce58\ud558\uae30 \ub54c\ubb38\uc5d0 \uaddc\uce59\uc744 \uc644\ubcbd\ud558\uac8c \ud30c\uc545\ud558\uae30 \uc5b4\ub824\uc6e0\uc2b5\ub2c8\ub2e4.  \n\n\uc815\ud655\ud55c \uaddc\uce59\uc744 \ud30c\uc545\ud558\uae30 \uc704\ud574\uc11c\ub294 \uc815\ud655\ud558\uace0 \uc77c\uad00\uc131 \uc788\ub294 \uc608\uc81c \ub370\uc774\ud130\uac00 \ud544\uc694\ud569\ub2c8\ub2e4.  \uc81c\uac00 \uc81c\uacf5\ud55c \ucf54\ub4dc\ub294 \uc81c\uac00 \uc774\ud574\ud55c \uaddc\uce59\uc744 \uae30\ubc18\uc73c\ub85c \uc791\uc131\ub418\uc5c8\uc9c0\ub9cc,  \uc81c\uacf5\ub41c \uc608\uc81c\uc640 \uc77c\uce58\ud558\uc9c0 \uc54a\ub294\ub2e4\uba74, \uadf8 \uaddc\uce59\uc740 \uc644\ubcbd\ud558\uc9c0 \uc54a\uc740 \uac83\uc785\ub2c8\ub2e4.\n\n\ub354 \uc815\ud655\ud55c \uc608\uc81c \ub610\ub294 \uaddc\uce59\uc5d0 \ub300\ud55c \uc124\uba85\uc744 \uc81c\uacf5\ud574\uc8fc\uc2dc\uba74, \ubb38\uc81c\ub97c \ub354 \uc798 \ud574\uacb0\ud560 \uc218 \uc788\uc744 \uac83\uc785\ub2c8\ub2e4.  \ud604\uc7ac \uc0c1\ud0dc\uc5d0\uc11c\ub294 \uc815\ud655\ud55c \ucd9c\ub825\uc744 \uc608\uce21\ud560 \uc218 \uc5c6\uc2b5\ub2c8\ub2e4.  \uc81c\uac00 \uc81c\uacf5\ud55c \ucf54\ub4dc\ub294 \uc81c\uac00 \uc774\ud574\ud55c \uaddc\uce59\uc5d0 \ub530\ub978 \uac83\uc774\uc9c0\ub9cc, \uadf8 \uaddc\uce59 \uc790\uccb4\uac00 \uc798\ubabb\ub420 \uc218 \uc788\ub2e4\ub294 \uc810\uc744 \uc720\uc758\ud574\uc57c \ud569\ub2c8\ub2e4.\n"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.4278326887425368,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 19856,
+    "candidates_token_count": 246,
+    "total_token_count": 20102,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 274426,
+    "candidates": 12959,
+    "total": 287385,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 3.380382,
+    "total_elapsed": 135.640805,
+    "response_times": [
+      10.523342,
+      8.892836,
+      21.24127,
+      7.709011,
+      1.445563,
+      5.663807,
+      1.670299,
+      8.002778,
+      1.569821,
+      7.492845,
+      1.564538,
+      7.412382,
+      1.85952,
+      7.698725,
+      1.640726,
+      7.682951,
+      1.753184,
+      9.227273,
+      2.00277,
+      13.322266,
+      1.932274,
+      3.380382
+    ]
+  }
+}
