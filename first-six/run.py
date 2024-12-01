@@ -1,9 +1,10 @@
-from geometor.arcprize.puzzles import Puzzle, PuzzleSet, Grid
 from rich import print
 from datetime import datetime
 from pathlib import Path
 import json
 import os
+
+from geometor.arcprize.puzzles import Puzzle, PuzzleSet, Grid
 from geometor.arcprize.solvers.gemini_solver import PuzzleSolver
 
 

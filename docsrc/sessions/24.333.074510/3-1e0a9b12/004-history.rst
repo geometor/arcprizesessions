@@ -1,0 +1,584 @@
+004 • History
+=============
+
+:puzzle_id: 3-1e0a9b12
+:description: example_summary
+:timestamp: 24.333.074510
+:call_count: 4
+
+
+
+
+
+
+Begin puzzle: 3-1e0a9b12
+
+
+
+
+
+
+**example_1**
+
+**input**
+
+.. code-block::
+
+   [[0 4 0 9]
+    [0 0 0 0]
+    [0 4 6 0]
+    [1 0 0 0]]
+
+**output**
+
+.. code-block::
+
+   [[0 0 0 0]
+    [0 0 0 0]
+    [0 4 0 0]
+    [1 4 6 9]]
+
+**images**
+
+
+
+
+
+.. image:: _images/000-example_1_input.png
+   :align: left
+   :width: 45%
+
+
+
+
+.. image:: _images/000-example_1_output.png
+   :align: left
+   :width: 45%
+
+
+
+
+
+**observations**
+
+
+
+
+
+
+The input grid is a 4x4 grid containing the colors blue, yellow, pink, and maroon.  The output grid is also a 4x4 grid. The non-zero values from the input grid appear in the bottom row of the output grid, in the same order as they appear in the input grid's last row, while maintaining their position within the row. The rest of the output grid is filled with white.
+
+
+
+
+
+
+code_execution:
+
+
+
+
+
+
+.. code-block:: python
+
+
+   import numpy as np
+
+   input_grid = np.array([[0, 4, 0, 9],
+                         [0, 0, 0, 0],
+                         [0, 4, 6, 0],
+                         [1, 0, 0, 0]])
+
+   output_grid = np.array([[0, 0, 0, 0],
+                          [0, 0, 0, 0],
+                          [0, 4, 0, 0],
+                          [1, 4, 6, 9]])
+
+   print("Input Grid:")
+   print(input_grid)
+   print("\nOutput Grid:")
+   print(output_grid)
+
+   # Identify non-zero elements and their positions in the input grid
+   non_zero_indices = np.nonzero(input_grid)
+   non_zero_elements = input_grid[non_zero_indices]
+   non_zero_positions = list(zip(non_zero_indices[0], non_zero_indices[1]))
+
+   print("\nNon-zero elements and their positions in the input grid:")
+   print(f"Elements: {non_zero_elements}")
+   print(f"Positions: {non_zero_positions}")
+
+   #Check if the non-zero elements in the last row of input are in the last row of the output grid
+   last_row_input = input_grid[-1,:]
+   last_row_output = output_grid[-1,:]
+   print(f"\nLast row input:{last_row_input}")
+   print(f"Last row output:{last_row_output}")
+   assert np.array_equal(last_row_input[np.nonzero(last_row_input)], last_row_output[np.nonzero(last_row_output)])
+
+
+
+
+
+
+code_execution_result: 1
+
+
+
+
+
+
+.. code-block::
+
+   Input Grid:
+   [[0 4 0 9]
+    [0 0 0 0]
+    [0 4 6 0]
+    [1 0 0 0]]
+
+   Output Grid:
+   [[0 0 0 0]
+    [0 0 0 0]
+    [0 4 0 0]
+    [1 4 6 9]]
+
+   Non-zero elements and their positions in the input grid:
+   Elements: [4 9 4 6 1]
+   Positions: [(np.int64(0), np.int64(1)), (np.int64(0), np.int64(3)), (np.int64(2), np.int64(1)), (np.int64(2), np.int64(2)), (np.int64(3), np.int64(0))]
+
+   Last row input:[1 0 0 0]
+   Last row output:[1 4 6 9]
+
+
+
+
+
+
+.. code-block:: yaml
+
+   input:
+     width: 4
+     height: 4
+     colors:
+       - 0: 12
+       - 4: 2
+       - 9: 1
+       - 6: 1
+       - 1: 1
+     objects:
+       - size: 1x1, position: (0,1), color: yellow
+       - size: 1x1, position: (0,3), color: maroon
+       - size: 1x1, position: (2,1), color: yellow
+       - size: 1x1, position: (2,2), color: pink
+       - size: 1x1, position: (3,0), color: blue
+
+   output:
+     width: 4
+     height: 4
+     colors:
+       - 0: 12
+       - 4: 2
+       - 9: 1
+       - 6: 1
+       - 1: 1
+     objects:
+       - size: 1x1, position: (3,0), color: blue
+       - size: 1x1, position: (3,1), color: yellow
+       - size: 1x1, position: (3,2), color: pink
+       - size: 1x1, position: (3,3), color: maroon
+
+   differences:
+     cells_changed: 8
+     colors_changed: The non-zero elements from the last row of the input grid are moved to the last row of the output grid, maintaining their order and position within the row. The rest of the grid is filled with white.
+   transformation:
+     - The non-zero values from the last row of the input are moved to the last row of the output, maintaining their original relative positions.
+     - All other cells are set to zero (white).
+
+The transformation rule appears to be: Take the non-zero elements from the last row of the input grid and place them in the last row of the output grid, maintaining their order and position. All other cells in the output grid are set to zero.
+
+
+
+
+
+
+**example_2**
+
+**input**
+
+.. code-block::
+
+   [[0 0 0 0 0 9]
+    [0 0 0 8 0 0]
+    [0 0 0 0 0 0]
+    [4 0 0 0 0 0]
+    [4 0 7 8 0 0]
+    [4 0 7 0 0 0]]
+
+**output**
+
+.. code-block::
+
+   [[0 0 0 0 0 0]
+    [0 0 0 0 0 0]
+    [0 0 0 0 0 0]
+    [4 0 0 0 0 0]
+    [4 0 7 8 0 0]
+    [4 0 7 8 0 9]]
+
+**images**
+
+
+
+
+
+.. image:: _images/001-example_2_input.png
+   :align: left
+   :width: 45%
+
+
+
+
+.. image:: _images/001-example_2_output.png
+   :align: left
+   :width: 45%
+
+
+
+
+
+**observations**
+
+
+
+
+
+
+The input grid is a 6x6 grid, and the output grid is also a 6x6 grid. The transformation appears to be similar to the first example.  The non-zero values from the last row of the input grid are appended to the last row of the output grid, maintaining their original order and position.  The remaining cells in the output grid are filled with white (0).
+
+code_execution:
+
+.. code-block:: python
+
+   import numpy as np
+
+   input_grid = np.array([[0, 0, 0, 0, 0, 9],
+                         [0, 0, 0, 8, 0, 0],
+                         [0, 0, 0, 0, 0, 0],
+                         [4, 0, 0, 0, 0, 0],
+                         [4, 0, 7, 8, 0, 0],
+                         [4, 0, 7, 0, 0, 0]])
+
+   output_grid = np.array([[0, 0, 0, 0, 0, 0],
+                          [0, 0, 0, 0, 0, 0],
+                          [0, 0, 0, 0, 0, 0],
+                          [4, 0, 0, 0, 0, 0],
+                          [4, 0, 7, 8, 0, 0],
+                          [4, 0, 7, 8, 0, 9]])
+
+   print("Input Grid:")
+   print(input_grid)
+   print("\nOutput Grid:")
+   print(output_grid)
+
+   # Identify non-zero elements and their positions in the input grid
+   non_zero_indices = np.nonzero(input_grid)
+   non_zero_elements = input_grid[non_zero_indices]
+   non_zero_positions = list(zip(non_zero_indices[0], non_zero_indices[1]))
+
+   print("\nNon-zero elements and their positions in the input grid:")
+   print(f"Elements: {non_zero_elements}")
+   print(f"Positions: {non_zero_positions}")
+
+   # Check if the last row of the input grid is appended to the last row of the output grid
+
+   last_row_input = input_grid[-1,:]
+   last_row_output = output_grid[-1,:]
+
+   print(f"\nLast row input:{last_row_input}")
+   print(f"Last row output:{last_row_output}")
+
+   combined_last_row = np.concatenate((last_row_input[np.nonzero(last_row_input)],last_row_output[np.nonzero(last_row_output)]))
+   assert np.array_equal(last_row_output, np.concatenate((last_row_input,last_row_output)))
+
+code_execution_result: 2
+
+.. code-block::
+
+   Input Grid:
+   [[0 0 0 0 0 9]
+    [0 0 0 8 0 0]
+    [0 0 0 0 0 0]
+    [4 0 0 0 0 0]
+    [4 0 7 8 0 0]
+    [4 0 7 0 0 0]]
+
+   Output Grid:
+   [[0 0 0 0 0 0]
+    [0 0 0 0 0 0]
+    [0 0 0 0 0 0]
+    [4 0 0 0 0 0]
+    [4 0 7 8 0 0]
+    [4 0 7 8 0 9]]
+
+   Non-zero elements and their positions in the input grid:
+   Elements: [9 8 4 4 7 8 4 7]
+   Positions: [(0, 5), (1, 3), (3, 0), (4, 0), (4, 2), (4, 3), (5, 0), (5, 2)]
+
+   Last row input:[4 0 7 0 0 0]
+   Last row output:[4 0 7 8 0 9]
+
+.. code-block:: yaml
+
+   input:
+     width: 6
+     height: 6
+     colors:
+       - 0: 29
+       - 4: 3
+       - 7: 2
+       - 8: 2
+       - 9: 1
+     objects:
+       - size: 1x1, position: (0,5), color: maroon
+       - size: 1x1, position: (1,3), color: azure
+       - size: 1x1, position: (3,0), color: yellow
+       - size: 1x1, position: (4,0), color: yellow
+       - size: 1x1, position: (4,2), color: orange
+       - size: 1x1, position: (4,3), color: azure
+       - size: 1x1, position: (5,0), color: yellow
+       - size: 1x1, position: (5,2), color: orange
+
+   output:
+     width: 6
+     height: 6
+     colors:
+       - 0: 33
+       - 4: 3
+       - 7: 2
+       - 8: 2
+       - 9: 1
+     objects:
+       - size: 1x1, position: (3,0), color: yellow
+       - size: 1x1, position: (4,0), color: yellow
+       - size: 1x1, position: (4,2), color: orange
+       - size: 1x1, position: (4,3), color: azure
+       - size: 1x1, position: (5,0), color: yellow
+       - size: 1x1, position: (5,2), color: orange
+       - size: 1x1, position: (5,3), color: azure
+       - size: 1x1, position: (5,5), color: maroon
+
+   differences:
+     cells_changed: 6
+     colors_changed: The non-zero values from the last row of the input are appended to the last row of the output.
+   transformation:
+     - The non-zero elements from the last row of the input are appended to the last row of the output, maintaining their relative positions.
+
+The transformation rule is consistent: Append the non-zero elements from the last row of the input grid to the last row of the output grid, preserving their order and position.  All other cells in the output grid remain unchanged (or are set to 0 if initially empty).
+
+
+
+
+
+
+**example_3**
+
+**input**
+
+.. code-block::
+
+   [[0 0 0 1 0]
+    [0 3 0 0 0]
+    [0 3 0 1 2]
+    [6 0 0 0 0]
+    [0 3 0 0 0]]
+
+**output**
+
+.. code-block::
+
+   [[0 0 0 0 0]
+    [0 0 0 0 0]
+    [0 3 0 0 0]
+    [0 3 0 1 0]
+    [6 3 0 1 2]]
+
+**images**
+
+
+
+
+
+.. image:: _images/002-example_3_input.png
+   :align: left
+   :width: 45%
+
+
+
+
+.. image:: _images/002-example_3_output.png
+   :align: left
+   :width: 45%
+
+
+
+
+
+**observations**
+
+
+
+
+
+
+The input and output grids in this example are 5x5 matrices. The transformation involves moving the non-zero elements from the input grid's last three rows to the output grid's last three rows, preserving their relative positions.  The top two rows of the output are filled with zeros.
+
+code_execution:
+
+.. code-block:: python
+
+   import numpy as np
+
+   input_grid = np.array([[0, 0, 0, 1, 0],
+                         [0, 3, 0, 0, 0],
+                         [0, 3, 0, 1, 2],
+                         [6, 0, 0, 0, 0],
+                         [0, 3, 0, 0, 0]])
+
+   output_grid = np.array([[0, 0, 0, 0, 0],
+                          [0, 0, 0, 0, 0],
+                          [0, 3, 0, 0, 0],
+                          [0, 3, 0, 1, 0],
+                          [6, 3, 0, 1, 2]])
+
+   print("Input Grid:")
+   print(input_grid)
+   print("\nOutput Grid:")
+   print(output_grid)
+
+   # Extract the last three rows from the input and output grids
+   input_last_three = input_grid[2:]
+   output_last_three = output_grid[2:]
+
+   print("\nInput Last Three Rows:")
+   print(input_last_three)
+   print("\nOutput Last Three Rows:")
+   print(output_last_three)
+
+
+   #Check for equality (excluding the last row's last element)
+   assert np.array_equal(input_last_three[:,:-1], output_last_three[:,1:])
+
+code_execution_result: 3
+
+.. code-block::
+
+   Input Grid:
+   [[0 0 0 1 0]
+    [0 3 0 0 0]
+    [0 3 0 1 2]
+    [6 0 0 0 0]
+    [0 3 0 0 0]]
+
+   Output Grid:
+   [[0 0 0 0 0]
+    [0 0 0 0 0]
+    [0 3 0 0 0]
+    [0 3 0 1 0]
+    [6 3 0 1 2]]
+
+   Input Last Three Rows:
+   [[0 3 0 1 2]
+    [6 0 0 0 0]
+    [0 3 0 0 0]]
+
+   Output Last Three Rows:
+   [[0 3 0 0 0]
+    [0 3 0 1 0]
+    [6 3 0 1 2]]
+
+.. code-block:: yaml
+
+   input:
+     width: 5
+     height: 5
+     colors:
+       - 0: 17
+       - 1: 2
+       - 2: 1
+       - 3: 3
+       - 6: 1
+     objects:
+       - size: 1x1, position: (0,3), color: blue
+       - size: 1x1, position: (1,1), color: green
+       - size: 1x1, position: (2,1), color: green
+       - size: 1x1, position: (2,3), color: blue
+       - size: 1x1, position: (2,4), color: red
+       - size: 1x1, position: (3,0), color: magenta
+       - size: 1x1, position: (4,1), color: green
+
+   output:
+     width: 5
+     height: 5
+     colors:
+       - 0: 22
+       - 1: 2
+       - 2: 1
+       - 3: 3
+       - 6: 1
+     objects:
+       - size: 1x1, position: (2,1), color: green
+       - size: 1x1, position: (3,1), color: green
+       - size: 1x1, position: (4,0), color: magenta
+       - size: 1x1, position: (4,1), color: green
+       - size: 1x1, position: (4,3), color: blue
+       - size: 1x1, position: (4,4), color: red
+
+   differences:
+     cells_changed: 12
+     colors_changed: The non-zero elements from the last three rows of the input grid are moved to the last three rows of the output grid, maintaining their relative positions. The top two rows of the output are filled with white.
+   transformation:
+     - The non-zero elements from the last three rows of the input grid are shifted down to the last three rows of the output grid while maintaining their relative positions within those rows. The top two rows of the output grid are filled with zeros.
+
+The transformation rule seems to involve shifting the non-zero elements from the last three rows of the input downward, filling the top two rows of the output with zeros.  The relative positions of the non-zero elements within the last three rows are preserved.
+
+
+
+
+
+
+**examples summary**
+
+
+
+
+
+
+====
+
+
+
+
+
+
+INSTRUCTIONS:
+
+
+
+
+
+
+
+* summarize your observations to explain the transformation of the input to output
+* use code_execution to investigate properties, patterns and differences in the grids
+
+
+
+
+
+
+
+
+.. seealso::
+
+   - :doc:`004-history`
+   - :doc:`004-response`
