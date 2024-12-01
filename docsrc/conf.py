@@ -1,4 +1,4 @@
-from ablog.conf import *
+#  from ablog.conf import *
 from photon_platform.sphinxilator.global_conf import *
 
 #  import geometor.arcprizesessions as module
