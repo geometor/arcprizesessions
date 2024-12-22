@@ -1,0 +1,61 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "In the second example, the input grid is again 9x9. This time it contains two red pixels (color 2), two blue pixels (color 1), and one azure pixel (color 8) against a white (color 0) background. The output grid is also 9x9. The output grid appears to follow the same rules as the first example: A diagonal cross of yellow pixels (color 4) around each red pixel, and an orthogonal cross of orange pixels (color 7) around each blue pixel. The original colors remain in the same position as the input grid. The Azure pixel is unchanged.\n\ncode_execution:\n```python\nimport numpy as np\n\ninput_grid = np.array([\n    [0, 0, 0, 8, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 0, 2, 0, 0],\n    [0, 0, 1, 0, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 0, 1, 0, 0],\n    [0, 2, 0, 0, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 0, 0, 0, 0]\n])\n\noutput_grid = np.array([\n    [0, 0, 0, 8, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 4, 0, 4, 0],\n    [0, 0, 7, 0, 0, 0, 2, 0, 0],\n    [0, 7, 1, 7, 0, 4, 0, 4, 0],\n    [0, 0, 7, 0, 0, 0, 0, 0, 0],\n    [0, 0, 0, 0, 0, 0, 7, 0, 0],\n    [4, 0, 4, 0, 0, 7, 1, 7, 0],\n    [0, 2, 0, 0, 0, 0, 7, 0, 0],\n    [4, 0, 4, 0, 0, 0, 0, 0, 0]\n])\n\nprint(f\"Input grid:\\n{input_grid}\")\nprint(f\"Output grid:\\n{output_grid}\")\n\nred_positions = np.argwhere(input_grid == 2)\nblue_positions = np.argwhere(input_grid == 1)\nazure_positions = np.argwhere(input_grid == 8)\nprint(f\"Red pixels at:\\n{red_positions}\")\nprint(f\"Blue pixels at:\\n{blue_positions}\")\nprint(f\"Azure pixels at:\\n{azure_positions}\")\n\nyellow_positions = np.argwhere(output_grid == 4)\norange_positions = np.argwhere(output_grid == 7)\nprint(f\"Yellow pixel positions:\\n{yellow_positions}\")\nprint(f\"Orange pixel positions:\\n{orange_positions}\")\n\ndef check_cross(grid, center_pos, color, cross_type='orthogonal'):\n  expected_positions = []\n  if cross_type == 'orthogonal':\n      expected_positions = np.array([\n        [center_pos[0]-1, center_pos[1]],\n        [center_pos[0]+1, center_pos[1]],\n        [center_pos[0],   center_pos[1]-1],\n        [center_pos[0],   center_pos[1]+1],\n    ])\n  elif cross_type == 'diagonal':\n      expected_positions = np.array([\n        [center_pos[0]-1, center_pos[1]-1],\n        [center_pos[0]-1, center_pos[1]+1],\n        [center_pos[0]+1,   center_pos[1]-1],\n        [center_pos[0]+1,   center_pos[1]+1],\n    ])\n  else:\n    raise ValueError(\"cross_type must be 'orthogonal' or 'diagonal'\")\n\n  expected_positions = np.clip(expected_positions, 0, grid.shape[0]-1)\n\n  match = all(grid[pos[0], pos[1]] == color for pos in expected_positions)\n  return match, expected_positions\n\nfor red_pos in red_positions:\n    yellow_match, expected_yellow_positions = check_cross(output_grid, red_pos, 4, 'diagonal')\n    print(f\"For red at {red_pos}, yellow cross match: {yellow_match} expected at {expected_yellow_positions}\")\n\nfor blue_pos in blue_positions:\n    orange_match, expected_orange_positions = check_cross(output_grid, blue_pos, 7, 'orthogonal')\n    print(f\"For blue at {blue_pos}, orange cross match: {orange_match} expected at {expected_orange_positions}\")\n\n```\ncode_execution_result: 1\n```\nInput grid:\n[[0 0 0 8 0 0 0 0 0]\n [0 0 0 0 0 0 0 0 0]\n [0 0 0 0 0 0 2 0 0]\n [0 0 1 0 0 0 0 0 0]\n [0 0 0 0 0 0 0 0 0]\n [0 0 0 0 0 0 0 0 0]\n [0 0 0 0 0 0 1 0 0]\n [0 2 0 0 0 0 0 0 0]\n [0 0 0 0 0 0 0 0 0]]\nOutput grid:\n[[0 0 0 8 0 0 0 0 0]\n [0 0 0 0 0 4 0 4 0]\n [0 0 7 0 0 0 2 0 0]\n [0 7 1 7 0 4 0 4 0]\n [0 0 7 0 0 0 0 0 0]\n [0 0 0 0 0 0 7 0 0]\n [4 0 4 0 0 7 1 7 0]\n [0 2 0 0 0 0 7 0 0]\n [4 0 4 0 0 0 0 0 0]]\nRed pixels at:\n[[2 6]\n [7 1]]\nBlue pixels at:\n[[3 2]\n [6 6]]\nAzure pixels at:\n[[0 3]]\nYellow pixel positions:\n[[1 5]\n [1 7]\n [3 5]\n [3 7]\n [6 0]\n [6 2]\n [8 0]\n [8 2]]\nOrange pixel positions:\n[[ 2  2]\n [ 3  1]\n [ 3  3]\n [ 4  2]\n [ 6  5]\n [ 6  7]\n [ 7  6]]\nFor red at [2 6], yellow cross match: True expected at [[1 5]\n [1 7]\n [3 5]\n [3 7]]\nFor red at [7 1], yellow cross match: True expected at [[6 0]\n [6 2]\n [8 0]\n [8 2]]\nFor blue at [3 2], orange cross match: True expected at [[2 2]\n [4 2]\n [3 1]\n [3 3]]\nFor blue at [6 6], orange cross match: True expected at [[5 6]\n [7 6]\n [6 5]\n [6 7]]\n\n```\nThe code confirms there are two red pixels at locations [2,6] and [7,1], two blue pixels at locations [3,2] and [6,6"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "index": 0,
+      "safety_ratings": [
+        {
+          "category": 9,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 8,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 7,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 10,
+          "probability": 1,
+          "blocked": false
+        }
+      ],
+      "token_count": 0,
+      "grounding_attributions": [],
+      "avg_logprobs": 0.0
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 5593,
+    "candidates_token_count": 2048,
+    "total_token_count": 7641,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 8058,
+    "candidates": 2544,
+    "total": 10602,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 64.588919,
+    "total_elapsed": 145.377805,
+    "response_times": [
+      80.559484,
+      64.588919
+    ]
+  }
+}

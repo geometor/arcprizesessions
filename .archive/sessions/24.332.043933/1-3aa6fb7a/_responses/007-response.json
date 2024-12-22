@@ -1,0 +1,113 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 5.0,
+                "row": 1.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 3.0,
+                "row": 2.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 6.0,
+                "row": 0.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 4.0,
+                "row": 4.0
+              }
+            }
+          },
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 1.0,
+                "column": 0.0,
+                "row": 6.0
+              }
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "index": 0,
+      "safety_ratings": [
+        {
+          "category": 10,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 9,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 8,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 7,
+          "probability": 1,
+          "blocked": false
+        }
+      ],
+      "token_count": 0,
+      "grounding_attributions": [],
+      "avg_logprobs": 0.0
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 19290,
+    "candidates_token_count": 125,
+    "total_token_count": 19415,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 105127,
+    "candidates": 4725,
+    "total": 109852,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 6.17162,
+    "total_elapsed": 351.46783,
+    "response_times": [
+      251.528766,
+      27.437006,
+      23.982523,
+      22.462846,
+      2.694802,
+      16.504159,
+      6.17162
+    ]
+  }
+}

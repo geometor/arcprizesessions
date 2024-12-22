@@ -1,0 +1,54 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "function_call": {
+              "name": "set_pixel",
+              "args": {
+                "color": 2.0,
+                "column": 1.0,
+                "row": 3.0
+              }
+            }
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "avg_logprobs": -0.016146627565224964,
+      "safety_ratings": [],
+      "token_count": 0,
+      "grounding_attributions": []
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 11460,
+    "candidates_token_count": 6,
+    "total_token_count": 11466,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 78295,
+    "candidates": 6735,
+    "total": 85030,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 2.048305,
+    "total_elapsed": 73.173022,
+    "response_times": [
+      12.007721,
+      16.385089,
+      9.827887,
+      9.064199,
+      8.014078,
+      1.260566,
+      5.962078,
+      1.398925,
+      6.472189,
+      2.048305
+    ]
+  }
+}

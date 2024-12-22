@@ -1,0 +1,66 @@
+{
+  "candidates": [
+    {
+      "content": {
+        "parts": [
+          {
+            "text": "code_execution:\n```python\nimport numpy as np\n\ndef transform_grid(input_grid):\n    height, width = input_grid.shape\n    colored_pixels = []\n    for r in range(height):\n        for c in range(width):\n            if input_grid[r, c] != 0:\n                colored_pixels.append((input_grid[r, c], (r,c)))\n\n    output_grid = np.zeros_like(input_grid)\n    bottom_row_idx = height -1\n\n    # Preserve existing colors in the bottom row\n    for color, (r, c) in colored_pixels:\n        if r == bottom_row_idx:\n            output_grid[r, c] = color\n    \n    #Place remaining pixels\n    next_available_col = 0\n    for color, (r,c) in colored_pixels:\n        if r != bottom_row_idx:\n            while next_available_col < width and output_grid[bottom_row_idx, next_available_col] != 0:\n                next_available_col += 1\n            if next_available_col < width:\n                output_grid[bottom_row_idx, next_available_col] = color\n                next_available_col += 1  #move to the next available spot\n\n    return output_grid\n\ninput_grid = np.array([[0, 2, 0, 4, 3],\n                      [5, 0, 0, 0, 0],\n                      [0, 0, 6, 0, 0],\n                      [5, 2, 0, 4, 0],\n                      [5, 0, 0, 0, 0]])\n\noutput_grid = transform_grid(input_grid)\nprint(output_grid)\n```"
+          }
+        ],
+        "role": "model"
+      },
+      "finish_reason": 1,
+      "index": 0,
+      "safety_ratings": [
+        {
+          "category": 9,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 8,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 7,
+          "probability": 1,
+          "blocked": false
+        },
+        {
+          "category": 10,
+          "probability": 1,
+          "blocked": false
+        }
+      ],
+      "token_count": 0,
+      "grounding_attributions": [],
+      "avg_logprobs": 0.0
+    }
+  ],
+  "usage_metadata": {
+    "prompt_token_count": 10961,
+    "candidates_token_count": 422,
+    "total_token_count": 11383,
+    "cached_content_token_count": 0
+  },
+  "token_totals": {
+    "prompt": 54265,
+    "candidates": 5025,
+    "total": 59290,
+    "cached": 0
+  },
+  "timing": {
+    "response_time": 11.020662,
+    "total_elapsed": 241.898008,
+    "response_times": [
+      63.605234,
+      74.055192,
+      56.19076,
+      14.512189,
+      19.572405,
+      2.371406,
+      11.020662
+    ]
+  }
+}
